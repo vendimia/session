@@ -12,12 +12,17 @@ class SessionManager extends Collection
         private Driver\DriverInterface $driver
     )
     {
-        $this->storage = $driver->initialize();
-
-        register_shutdown_function([$this, "persist"]);
     }
 
-    /** 
+    public function initialize(...$options)
+    {
+        $this->storage = $driver->initialize(...$options);
+
+        register_shutdown_function([$this, "persist"]);
+
+    }
+
+    /**
      * Saves the session state onto the driver
      */
     public function persist()

@@ -6,9 +6,9 @@ namespace Vendimia\Session\Driver;
  */
 class Php implements DriverInterface
 {
-    public function initialize(): array
+    public function initialize(...$options): array
     {
-        session_start();
+        session_start($options);
 
         return $_SESSION;
     }
