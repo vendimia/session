@@ -6,8 +6,19 @@ namespace Vendimia\Session\Driver;
  */
 class Php implements DriverInterface
 {
+    private ?string $identifier = null;
+
+    public function setIdentifier(string $identifier): void
+    {
+        $this->identifier = $identifier;
+    }
+
     public function initialize(...$options): array
     {
+        if ($this->identifier) {
+            session_name($this->identifier);
+        }
+
         session_start($options);
 
         return $_SESSION;

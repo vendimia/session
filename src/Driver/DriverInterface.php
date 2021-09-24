@@ -7,9 +7,14 @@ namespace Vendimia\Session\Driver;
 interface DriverInterface
 {
     /**
+     * Sets this session identifier
+     */
+    public function setIdentifier(string $identifier): void;
+
+    /**
      * Initializes the session mechanism. Returns the persisted data.
      */
-    public function initialize(): array;
+    public function initialize(...$options): array;
 
     /**
      * Persists the data.
