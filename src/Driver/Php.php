@@ -8,7 +8,7 @@ class Php implements DriverInterface
 {
     private ?string $identifier = null;
 
-    public function setIdentifier(string $identifier): void
+    public function setIdentifier(?string $identifier): void
     {
         $this->identifier = $identifier;
     }

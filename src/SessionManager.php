@@ -14,7 +14,7 @@ class SessionManager extends Collection
     {
     }
 
-    public function initialize(string $identifier = null, array $options = [])
+    public function initialize(?string $identifier = null, array $options = [])
     {
         $this->driver->setIdentifier($identifier);
         $this->storage = $this->driver->initialize(...$options);
