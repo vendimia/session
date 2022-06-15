@@ -14,7 +14,7 @@ interface DriverInterface
     /**
      * Initializes the session mechanism. Returns the persisted data.
      */
-    public function initialize(...$options): array;
+    public function initialize(array $options): array;
 
     /**
      * Persists the data.

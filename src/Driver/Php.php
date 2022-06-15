@@ -13,7 +13,7 @@ class Php implements DriverInterface
         $this->identifier = $identifier;
     }
 
-    public function initialize(...$options): array
+    public function initialize($options): array
     {
         if ($this->identifier) {
             session_name($this->identifier);
